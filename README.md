@@ -10,8 +10,12 @@ This script does not use [Android Image Kitchen](https://forum.xda-developers.co
 Screenshot: [paracore-windows-cmd-200525.png](https://raw.githubusercontent.com/nooriro/paracore/d2546d17686fe83dacf149c31ec7c6f9cf3cec31/screenshots/paracore-windows-cmd-200525.png)  
 Latest SDK Platform Tools download: [Windows](https://dl.google.com/android/repository/platform-tools-latest-windows.zip) | [Mac](https://dl.google.com/android/repository/platform-tools-latest-darwin.zip) | [Linux](https://dl.google.com/android/repository/platform-tools-latest-linux.zip)
 
-1. On your PC, [download the factory image](https://developers.google.com/android/images) of the **target device** and **build number** you need, and extract `boot.img` from there.
-
+1. On your PC, [download the factory image](https://developers.google.com/android/images) of your **device** and **build number** currently in use, and extract `boot.img` from there.
+   * If your device is stuck on the boot screen or in a boot loop, reboot into fastboot mode using key combo. Then, boot from `boot.img` without flashing it. The device will probably boot.
+        ```bat
+        fastboot boot boot.img
+        ```
+   
 2. Copy `boot.img` from your PC to your device.
     ```bat
     adb push boot.img /sdcard/Download/
@@ -44,6 +48,13 @@ Latest SDK Platform Tools download: [Windows](https://dl.google.com/android/repo
     adb pull /sdcard/Download/magisk_patched_coreonly.img
     adb pull /sdcard/Download/magisk_patched_remove.img
     ```
+
+10. Reboot your device into fastboot mode using key combo. Then, boot from `magisk_patched_coreonly.img` without flashing it.
+    ```bat
+    fastboot boot magisk_patched_coreonly.img
+    ```
+    Device will probably boot with Magisk core only mode. Run Magisk Manager and remove the offending module.  
+    Then turn off 'Magisk Core Only Mode' in Magisk Manager Settings, and reboot system.
 
 ## Working without a PC
 Screenshot (Terminal Emulator): [paracore-terminal-emulator-200525.png](https://raw.githubusercontent.com/nooriro/paracore/d2546d17686fe83dacf149c31ec7c6f9cf3cec31/screenshots/paracore-terminal-emulator-200525.png)  
