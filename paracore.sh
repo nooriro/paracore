@@ -55,29 +55,27 @@ function parasite() {
   if [ "$1" = "coreonly" ]; then
     # ---------- start of overlay files contents (coreonly) ----------
     # overlay.d  ('coreonly')
-    # ├── init.resetmagisk.rc        a65c47aa    a8a16fa129b5975d48ede5c7e4175ab79817baf9
+    # ├── init.resetmagisk.rc        4137f9f7    3b0048ac4d95d0a9a5001c147f33fc0b1156fc0f
     # └── sbin
-    #     ├── .disable_magisk        32d70693    adc83b19e793491b1c6ea0fd8b46cd9f32e592fc
-    #     └── init.resetmagisk.sh    1a927dee    cbb7ff681f31a95a796e14b95e0281cb39da7e8d
+    #     └── init.resetmagisk.sh    12f2ef07    0235b041c72d45c8dd937bef71b37f6c6cc5c937
     # 
     local INIT_RESETMAGISK_RC='on post-fs-data
-	exec u:r:magisk:s0 root root -- /sbin/init.resetmagisk.sh
-'
-    local  DOT_DISABLE_MAGISK='
+    exec u:r:magisk:s0 root root -- /sbin/init.resetmagisk.sh
 '
     local INIT_RESETMAGISK_SH='#!/system/bin/sh
-cp -rf /sbin/.disable_magisk /cache
-cp -rf /sbin/.disable_magisk /data/cache'
+> /cache/.disable_magisk
+> /data/cache/.disable_magisk
+'
     # ---------- end of overlay files contents (coreonly)----------
   elif [ "$1" = "remove" ]; then
     # ---------- start of overlay files contents (remove) ----------
     # overlay.d  ('remove')
-    # ├── init.resetmagisk.rc        a65c47aa    a8a16fa129b5975d48ede5c7e4175ab79817baf9
+    # ├── init.resetmagisk.rc        4137f9f7    3b0048ac4d95d0a9a5001c147f33fc0b1156fc0f
     # └── sbin
     #     └── init.resetmagisk.sh    c66946c3    596ff1fea453a8d6d592612c0fac75f27b31f622
     # 
     local INIT_RESETMAGISK_RC='on post-fs-data
-	exec u:r:magisk:s0 root root -- /sbin/init.resetmagisk.sh
+    exec u:r:magisk:s0 root root -- /sbin/init.resetmagisk.sh
 '
     local INIT_RESETMAGISK_SH='#!/system/bin/sh
 rm -rf /data/adb/* && reboot
@@ -105,7 +103,6 @@ rm -rf /data/adb/* && reboot
   echomsg "- Dropping overlay files" "                          (printf & redirection)"
   if [ "$1" = "coreonly" ]; then
     printf "%s" "$INIT_RESETMAGISK_RC" > init.resetmagisk.rc
-    printf "%s" "$DOT_DISABLE_MAGISK"  > .disable_magisk
     printf "%s" "$INIT_RESETMAGISK_SH" > init.resetmagisk.sh
   elif [ "$1" = "remove" ]; then
     printf "%s" "$INIT_RESETMAGISK_RC" > init.resetmagisk.rc
@@ -121,7 +118,6 @@ rm -rf /data/adb/* && reboot
       "mkdir 755 overlay.d" \
       "add 644 overlay.d/init.resetmagisk.rc init.resetmagisk.rc" \
       "mkdir 755 overlay.d/sbin" \
-      "add 644 overlay.d/sbin/.disable_magisk .disable_magisk" \
       "add 744 overlay.d/sbin/init.resetmagisk.sh init.resetmagisk.sh" 2>/dev/null
   elif [ "$1" = "remove" ]; then
     ./arm/magiskboot cpio ramdisk.cpio \
