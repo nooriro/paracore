@@ -60,6 +60,7 @@ Latest SDK Platform Tools download: [Windows](https://dl.google.com/android/repo
 Screenshot (Terminal Emulator): [paracore-terminal-emulator-200525.png](https://raw.githubusercontent.com/nooriro/paracore/d2546d17686fe83dacf149c31ec7c6f9cf3cec31/screenshots/paracore-terminal-emulator-200525.png)  
 Screenshot (Termux): [paracore-termux-1-200525.png](https://raw.githubusercontent.com/nooriro/paracore/d2546d17686fe83dacf149c31ec7c6f9cf3cec31/screenshots/paracore-termux-1-200525.png) | [paracore-termux-2-200525.png](https://raw.githubusercontent.com/nooriro/paracore/d2546d17686fe83dacf149c31ec7c6f9cf3cec31/screenshots/paracore-termux-2-200525.png)
 
+The process below is how to create two boot images using only a working Android device. You will eventually need a PC to boot from `magisk_patched_coreonly.img` or `magisk_patched_remove.img`.
 
 1. [Download the factory image](https://developers.google.com/android/images) of the **target device** and **build number** you need, and extract `boot.img` from there.
 
