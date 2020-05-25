@@ -7,7 +7,7 @@ This script does not use [Android Image Kitchen](https://forum.xda-developers.co
 
 
 ## Working with a PC
-Screenshot: [paracore-windows-cmd-200524.png](https://raw.githubusercontent.com/nooriro/paracore/04e3f4921d649600a78a37ae4bfbd06a5772054b/screenshots/paracore-windows-cmd-200524.png)  
+Screenshot: [paracore-windows-cmd-200525.png](https://raw.githubusercontent.com/nooriro/paracore/d2546d17686fe83dacf149c31ec7c6f9cf3cec31/screenshots/paracore-windows-cmd-200525.png)  
 Latest SDK Platform Tools download: [Windows](https://dl.google.com/android/repository/platform-tools-latest-windows.zip) | [Mac](https://dl.google.com/android/repository/platform-tools-latest-darwin.zip) | [Linux](https://dl.google.com/android/repository/platform-tools-latest-linux.zip)
 
 1. On your PC, [download the factory image](https://developers.google.com/android/images) of the **target device** and **build number** you need, and extract `boot.img` from there.
@@ -46,8 +46,8 @@ Latest SDK Platform Tools download: [Windows](https://dl.google.com/android/repo
     ```
 
 ## Working without a PC
-Screenshot (Terminal Emulator): [paracore-terminal-emulator-200524.png](https://raw.githubusercontent.com/nooriro/paracore/04e3f4921d649600a78a37ae4bfbd06a5772054b/screenshots/paracore-terminal-emulator-200524.png)  
-Screenshot (Termux): [paracore-termux-1-200524.png](https://raw.githubusercontent.com/nooriro/paracore/04e3f4921d649600a78a37ae4bfbd06a5772054b/screenshots/paracore-termux-1-200524.png) | [paracore-termux-2-200524.png](https://raw.githubusercontent.com/nooriro/paracore/04e3f4921d649600a78a37ae4bfbd06a5772054b/screenshots/paracore-termux-2-200524.png)
+Screenshot (Terminal Emulator): [paracore-terminal-emulator-200525.png](https://raw.githubusercontent.com/nooriro/paracore/d2546d17686fe83dacf149c31ec7c6f9cf3cec31/screenshots/paracore-terminal-emulator-200525.png)  
+Screenshot (Termux): [paracore-termux-1-200525.png](https://raw.githubusercontent.com/nooriro/paracore/d2546d17686fe83dacf149c31ec7c6f9cf3cec31/screenshots/paracore-termux-1-200525.png) | [paracore-termux-2-200525.png](https://raw.githubusercontent.com/nooriro/paracore/d2546d17686fe83dacf149c31ec7c6f9cf3cec31/screenshots/paracore-termux-2-200525.png)
 
 
 1. [Download the factory image](https://developers.google.com/android/images) of the **target device** and **build number** you need, and extract `boot.img` from there.
